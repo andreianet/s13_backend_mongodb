@@ -1,0 +1,27 @@
+{
+  "name": "s13_backend_mongodb",
+  "version": "1.0.0",
+  "description": "API e MongoDB\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D-\u001b[3~\u001b[3~\u001b[3~\u001b[C -\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreianet/s13_backend_mongodb.git"
+  },
+  "author": "Andreia Cardoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreianet/s13_backend_mongodb/issues"
+  },
+  "homepage": "https://github.com/andreianet/s13_backend_mongodb#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.11",
+    "nodemon": "^2.0.6"
+  }
+}
