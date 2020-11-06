@@ -1,3 +1,4 @@
+const { model } = require('mongoose');
 const musicas = require('../models/musicasSchema')
 
 //Obtem todas as musicas
@@ -31,14 +32,14 @@ const getMusicasById = (req, res) => {
 //Add
 const addMusicas = (req,res) => {
     console.log(req.url);
-    const maravilhosaBody = req.body
-    const maravilhosa = new maravilhosaTeste.maravilhosaCollection(maravilhosaBody)
+    const musicasBody = req.body
+    const musica = new musicas.musicasCollection(musicasBody)
 
-    maravilhosa.save((error) => {
+    musica.save((error) => {
         if(error) {
             return res.status(400).send(error);
         } else {
-            return res.status(201).send(maravilhosa)
+            return res.status(201).send(musicas)
         } 
     })
     
@@ -46,13 +47,14 @@ const addMusicas = (req,res) => {
 
 //UPDATE
 const musicasUpdate = (req, res) => {
-    console.log(req.url);
+    const idParam = req.params.id
     const musicasBody = req.body
     const novo = {new: true} //retorna valor modificado
 
     musicas.musicasCollection.findByIdAndUpdate(
         idParam,
-        {$set:{nusicaBody}},
+        {$set: musicasBody}, //com os colchetes não funciona
+        novo,
         (error, musics) => {
             if (error){
                 return res.status(500).send(error)
@@ -61,7 +63,7 @@ const musicasUpdate = (req, res) => {
             }else{
                 return res.sendStatus(404)
             }
-        }
+        }             
 
     )
 }
